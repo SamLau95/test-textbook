@@ -57,7 +57,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.4. [In Progress] Summary Statistics and Empirical Loss" href="design_summary_stat.html" />
+    <link rel="next" title="2.4. SRS vs. “Big Data”" href="design_srs_vs_big_data.html" />
     <link rel="prev" title="2.2. [In Progress] Data Design" href="design_data.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,6 +92,11 @@
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../preface.html">
+   Preface
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../prereqs.html">
    Prerequisites
@@ -154,13 +159,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="design_summary_stat.html">
-     2.4. [In Progress] Summary Statistics and Empirical Loss
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="design_srs_vs_big_data.html">
-     2.5. SRS vs. “Big Data”
+     2.4. SRS vs. “Big Data”
     </a>
    </li>
   </ul>
@@ -168,23 +168,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../03/sql_intro.html">
-   3. Relational Databases and SQL
+  <a class="reference internal" href="../03/modeling_intro.html">
+   3. Modeling and Estimation
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/sql_rdbms.html">
-     3.1. The Relational Model
+    <a class="reference internal" href="../03/modeling_simple.html">
+     3.1. Models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/sql_basics.html">
-     3.2. SQL
+    <a class="reference internal" href="../03/modeling_loss_functions.html">
+     3.2. Loss Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/sql_joins.html">
-     3.3. SQL Joins
+    <a class="reference internal" href="../03/modeling_abs_huber.html">
+     3.3. Absolute and Huber Loss
     </a>
    </li>
   </ul>
@@ -192,28 +192,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../04/pandas_intro.html">
-   4. Data Tables in Python
+  <a class="reference internal" href="../04/sql_intro.html">
+   4. Relational Databases and SQL
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../04/pandas_structure.html">
-     4.1. Structure
+    <a class="reference internal" href="../04/sql_rdbms.html">
+     4.1. The Relational Model
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04/pandas_indexes.html">
-     4.2. Indexes, Slicing, and Sorting
+    <a class="reference internal" href="../04/sql_basics.html">
+     4.2. SQL
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04/pandas_grouping_pivoting.html">
-     4.3. Grouping and Pivoting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/pandas_apply_strings_plotting.html">
-     4.4. Apply, Strings, and Plotting
+    <a class="reference internal" href="../04/sql_joins.html">
+     4.3. SQL Joins
     </a>
    </li>
   </ul>
@@ -221,23 +216,28 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../05/repr_intro.html">
-   5. [In Progress] Data Representation
+  <a class="reference internal" href="../05/pandas_intro.html">
+   5. Data Tables in Python
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../05/repr_structure.html">
-     5.1. Structure
+    <a class="reference internal" href="../05/pandas_indexes.html">
+     5.1. Indexes, Slicing, and Sorting
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05/repr_semantics.html">
-     5.2. [In Progress] Semantics
+    <a class="reference internal" href="../05/pandas_grouping_pivoting.html">
+     5.2. Grouping and Pivoting
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05/repr_granularity.html">
-     5.3. Granularity
+    <a class="reference internal" href="../05/pandas_apply_strings_plotting.html">
+     5.3. Apply, Strings, and Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/pandas_joins.html">
+     5.4. [In progress] Joins
     </a>
    </li>
   </ul>
@@ -245,13 +245,57 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../06/quality_intro.html">
-   6. [In Progress] Data Quality
+  <a class="reference internal" href="../06/repr_intro.html">
+   6. [In Progress] Data Representation
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../06/quality_stub.html">
-     6.1. [In Progress] Missing Data
+    <a class="reference internal" href="../06/repr_structure.html">
+     6.1. Structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/repr_semantics.html">
+     6.2. [In Progress] Semantics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/repr_data_types.html">
+     6.3. Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/repr_granularity.html">
+     6.4. Granularity
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07/quality_intro.html">
+   7. [In Progress] Data Quality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08/eda_intro.html">
+   8. [In Progress] Exploratory Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../09/police_intro.html">
+   9. [In progress] Case Study: Berkeley Policing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/police_calls.html">
+     9.1. Cleaning the Calls Dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/police_stops.html">
+     9.2. Cleaning The Stops Dataset
     </a>
    </li>
   </ul>
@@ -259,37 +303,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../07/eda_intro.html">
-   7. [In Progress] Exploratory Data Analysis
+  <a class="reference internal" href="../10/viz_intro.html">
+   10. Data Visualization
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../07/eda_stub.html">
-     7.1. [In Progress] A Case Study
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../08/viz_intro.html">
-   8. Data Visualization
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08/viz_quantitative.html">
-     8.1. Visualizing Quantitative Data
+    <a class="reference internal" href="../10/viz_quantitative.html">
+     10.1. Visualizing Quantitative Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08/viz_qualitative.html">
-     8.2. Visualizing Qualitative Data
+    <a class="reference internal" href="../10/viz_qualitative.html">
+     10.2. Visualizing Qualitative Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08/viz_matplotlib.html">
-     8.3. Customizing Plots using
+    <a class="reference internal" href="../10/viz_matplotlib.html">
+     10.3. Customizing Plots using
      <code class="docutils literal notranslate">
       <span class="pre">
        matplotlib
@@ -298,18 +328,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08/viz_principles.html">
-     8.4. Visualization Principles
+    <a class="reference internal" href="../10/viz_principles.html">
+     10.4. Visualization Principles
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08/viz_principles_2.html">
-     8.5. Visualization Principles Continued
+    <a class="reference internal" href="../10/viz_principles_2.html">
+     10.5. Visualization Principles Continued
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08/viz_philosophy.html">
-     8.6. Philosophy for Data Visualization
+    <a class="reference internal" href="../10/viz_philosophy.html">
+     10.6. Philosophy for Data Visualization
     </a>
    </li>
   </ul>
@@ -317,13 +347,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../09/web_intro.html">
-   9. Web Technologies
+  <a class="reference internal" href="../11/text_intro.html">
+   11. Working with Text
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../09/web_http.html">
-     9.1. HTTP
+    <a class="reference internal" href="../11/text_strings.html">
+     11.1. Python String Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11/text_regex.html">
+     11.2. Regular Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11/text_re.html">
+     11.3. Regex and Python
     </a>
    </li>
   </ul>
@@ -331,23 +371,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../10/text_intro.html">
-   10. Working with Text
+  <a class="reference internal" href="../12/web_intro.html">
+   12. Web Technologies
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../10/text_strings.html">
-     10.1. Python String Methods
+    <a class="reference internal" href="../12/web_http.html">
+     12.1. HTTP
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10/text_regex.html">
-     10.2. Regular Expressions
+    <a class="reference internal" href="../12/web_rest.html">
+     12.2. [In Progress] REST
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10/text_re.html">
-     10.3. Regex and Python
+    <a class="reference internal" href="../12/web_html.html">
+     12.3. [In Progress] XPath and HTML
     </a>
    </li>
   </ul>
@@ -355,23 +395,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../11/modeling_intro.html">
-   11. Modeling and Estimation
+  <a class="reference internal" href="../13/linear_models.html">
+   13. Linear Models
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../11/modeling_simple.html">
-     11.1. Models
+    <a class="reference internal" href="../13/linear_tips.html">
+     13.1. Predicting Tip Amounts
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../11/modeling_loss_functions.html">
-     11.2. Loss Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11/modeling_abs_huber.html">
-     11.3. Absolute and Huber Loss
+    <a class="reference internal" href="../13/linear_projection.html">
+     13.2. Least Squares — A Geometric Perspective
     </a>
    </li>
   </ul>
@@ -379,28 +414,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../12/gradient_descent.html">
-   12. Gradient Descent and Numerical Optimization
+  <a class="reference internal" href="../14/prob_and_gen.html">
+   14. Probability and Generalization
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../12/gradient_basics.html">
-     12.1. Loss Minimization Using a Program
+    <a class="reference internal" href="../14/prob_random_vars.html">
+     14.1. Random Variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../12/gradient_descent_define.html">
-     12.2. Gradient Descent
+    <a class="reference internal" href="../14/prob_exp_var.html">
+     14.2. Expectation and Variance
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../12/gradient_convexity.html">
-     12.3. Convexity
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../12/gradient_stochastic.html">
-     12.4. Stochastic Gradient Descent
+    <a class="reference internal" href="../14/prob_risk.html">
+     14.3. Risk
     </a>
    </li>
   </ul>
@@ -408,23 +438,33 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../13/prob_and_gen.html">
-   13. Probability and Generalization
+  <a class="reference internal" href="../15/gradient_descent.html">
+   15. Gradient Descent and Numerical Optimization
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../13/prob_random_vars.html">
-     13.1. Random Variables
+    <a class="reference internal" href="../15/gradient_basics.html">
+     15.1. Loss Minimization Using a Program
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../13/prob_exp_var.html">
-     13.2. Expectation and Variance
+    <a class="reference internal" href="../15/gradient_descent_define.html">
+     15.2. Gradient Descent
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../13/prob_risk.html">
-     13.3. Risk
+    <a class="reference internal" href="../15/gradient_convexity.html">
+     15.3. Convexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15/gradient_stochastic.html">
+     15.4. Stochastic Gradient Descent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../15/gradient_lin_reg.html">
+     15.5. Fitting a Linear Model Using Gradient Descent
     </a>
    </li>
   </ul>
@@ -432,33 +472,13 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../14/linear_models.html">
-   14. Linear Models
+  <a class="reference internal" href="../16/donkey_intro.html">
+   16. [In progress] Case Study: Donkey Dimensions
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../14/linear_tips.html">
-     14.1. Predicting Tip Amounts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../14/linear_grad.html">
-     14.2. Fitting a Linear Model Using Gradient Descent
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../14/linear_multiple.html">
-     14.3. Multiple Linear Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../14/linear_projection.html">
-     14.4. Least Squares — A Geometric Perspective
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../14/linear_case_study.html">
-     14.5. Linear Regression Case Study
+    <a class="reference internal" href="../16/donkey_analysis.html">
+     16.1. Linear Regression Case Study
     </a>
    </li>
   </ul>
@@ -466,18 +486,13 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../15/feature_engineering.html">
-   15. Feature Engineering
+  <a class="reference internal" href="../17/mult_intro.html">
+   17. [In progress] Multiple Linear Regression
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../15/feature_one_hot.html">
-     15.1. The Walmart dataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../15/feature_polynomial.html">
-     15.2. Predicting Ice Cream Ratings
+    <a class="reference internal" href="../17/mult_model.html">
+     17.1. Multiple Linear Regression
     </a>
    </li>
   </ul>
@@ -485,23 +500,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../16/bias_intro.html">
-   16. The Bias-Variance Tradeoff
+  <a class="reference internal" href="../18/feature_engineering.html">
+   18. Feature Engineering
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../16/bias_risk.html">
-     16.1. Risk and Loss Minimization
+    <a class="reference internal" href="../18/feature_one_hot.html">
+     18.1. The Walmart dataset
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../16/bias_modeling.html">
-     16.2. Model Bias and Variance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../16/bias_cv.html">
-     16.3. Cross-Validation
+    <a class="reference internal" href="../18/feature_polynomial.html">
+     18.2. Predicting Ice Cream Ratings
     </a>
    </li>
   </ul>
@@ -509,23 +519,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../17/reg_intro.html">
-   17. Regularization
+  <a class="reference internal" href="../19/bias_intro.html">
+   19. The Bias-Variance Tradeoff
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../17/reg_intuition.html">
-     17.1. Regularization Intuition
+    <a class="reference internal" href="../19/bias_risk.html">
+     19.1. Risk and Loss Minimization
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../17/reg_ridge.html">
-     17.2. L2 Regularization: Ridge Regression
+    <a class="reference internal" href="../19/bias_modeling.html">
+     19.2. Model Bias and Variance
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../17/reg_lasso.html">
-     17.3. L1 Regularization: Lasso Regression
+    <a class="reference internal" href="../19/bias_cv.html">
+     19.3. Cross-Validation
     </a>
    </li>
   </ul>
@@ -533,48 +543,23 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../18/classification_intro.html">
-   18. Classification
+  <a class="reference internal" href="../20/reg_intro.html">
+   20. Regularization
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_prob.html">
-     18.1. Regression on Probabilities
+    <a class="reference internal" href="../20/reg_intuition.html">
+     20.1. Regularization Intuition
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_log_model.html">
-     18.2. The Logistic Model
+    <a class="reference internal" href="../20/reg_ridge.html">
+     20.2. L2 Regularization: Ridge Regression
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_cost.html">
-     18.3. A Loss Function for the Logistic Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_log_reg.html">
-     18.4. Using Logistic Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_cost_justification.html">
-     18.5. Approximating the Empirical Probability Distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_sgd.html">
-     18.6. Fitting a Logistic Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_sensitivity_specificity.html">
-     18.7. Evaluating Logistic Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../18/classification_multiclass.html">
-     18.8. Multiclass Classification
+    <a class="reference internal" href="../20/reg_lasso.html">
+     20.3. L1 Regularization: Lasso Regression
     </a>
    </li>
   </ul>
@@ -582,33 +567,48 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../19/hyp_intro.html">
-   19. Statistical Inference
+  <a class="reference internal" href="../21/classification_intro.html">
+   21. Classification
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../19/hyp_introduction.html">
-     19.1. Hypothesis Testing and Confidence Intervals
+    <a class="reference internal" href="../21/classification_prob.html">
+     21.1. Regression on Probabilities
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../19/hyp_introduction_part2.html">
-     19.2. Permutation Test
+    <a class="reference internal" href="../21/classification_log_model.html">
+     21.2. The Logistic Model
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../19/hyp_regression.html">
-     19.3. Bootstrapping for Linear Regression (Inference for the True Coefficients)
+    <a class="reference internal" href="../21/classification_cost.html">
+     21.3. A Loss Function for the Logistic Model
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../19/hyp_studentized.html">
-     19.4. The Studentized Bootstrap
+    <a class="reference internal" href="../21/classification_log_reg.html">
+     21.4. Using Logistic Regression
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../19/hyp_phacking.html">
-     19.5. P-hacking
+    <a class="reference internal" href="../21/classification_cost_justification.html">
+     21.5. Approximating the Empirical Probability Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../21/classification_sgd.html">
+     21.6. Fitting a Logistic Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../21/classification_sensitivity_specificity.html">
+     21.7. Evaluating Logistic Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../21/classification_multiclass.html">
+     21.8. Multiclass Classification
     </a>
    </li>
   </ul>
@@ -616,28 +616,81 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../20/pca_intro.html">
-   20. Dimensionality Reduction and PCA
+  <a class="reference internal" href="../22/hyp_intro.html">
+   22. Statistical Inference
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../20/pca_dims.html">
-     20.1. Dimensions of a Data Table
+    <a class="reference internal" href="../22/hyp_introduction.html">
+     22.1. Hypothesis Testing and Confidence Intervals
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../20/pca_svd.html">
-     20.2. PCA using the Singular Value Decomposition
+    <a class="reference internal" href="../22/hyp_introduction_part2.html">
+     22.2. Permutation Test
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../20/pca_in_practice.html">
-     20.3. PCA in Practice
+    <a class="reference internal" href="../22/hyp_regression.html">
+     22.3. Bootstrapping for Linear Regression (Inference for the True Coefficients)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../22/hyp_studentized.html">
+     22.4. The Studentized Bootstrap
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../23/repl_intro.html">
+   23. [In progress] Replicable Research
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../23/repl_phacking.html">
+     23.1. P-hacking
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../24/pca_intro.html">
+   24. Dimensionality Reduction and PCA
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../24/pca_dims.html">
+     24.1. Dimensions of a Data Table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../24/pca_svd.html">
+     24.2. PCA using the Singular Value Decomposition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../24/pca_in_practice.html">
+     24.3. PCA in Practice
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../25/dtrees_intro.html">
+   25. [In progress] Decision Trees and Random Forests
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../26/clustering_intro.html">
+   26. [In progress] Clustering
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -824,8 +877,8 @@ the cards well, and draw <span class="math notranslate nohighlight">\(2\)</span>
 uniformly at random without replacement.</p>
 <p>Here are all possible samples of size 2:</p>
 <p>\[</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f4dbeaf-8b1e-4738-802f-388bcb5d12b4">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-8f4dbeaf-8b1e-4738-802f-388bcb5d12b4" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-3acc5c23-7863-462d-a017-03f0fd053dca">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-3acc5c23-7863-462d-a017-03f0fd053dca" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 AB &amp; BC &amp; CD &amp; DE &amp; EF\\\\
 AC&amp;BD&amp;CE&amp;DF&amp;\\\\
 AD&amp;BE&amp;CF&amp;&amp;\\\\
@@ -903,8 +956,8 @@ single SRS to select groups whereas in stratified sampling we use multiple
 SRS’s, one for each group.</p>
 <p>We can divide our population of 6 individuals into the following strata:</p>
 <p>\[</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08898e38-f5e6-4f28-a3d9-093e03804edb">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-08898e38-f5e6-4f28-a3d9-093e03804edb" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-41fc9bf8-b895-439c-97c7-e26a7d1d0330">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-41fc9bf8-b895-439c-97c7-e26a7d1d0330" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 \text{Strata 1:} &amp; \{A,B,C,D\} \\\\
 \text{Strata 2:} &amp; \{E,F\}
 \end{matrix}\]</div>
@@ -989,7 +1042,7 @@ compares against “big data”.</p>
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="design_data.html" title="previous page"><span class="section-number">2.2. </span>[In Progress] Data Design</a>
-    <a class='right-next' id="next-link" href="design_summary_stat.html" title="next page"><span class="section-number">2.4. </span>[In Progress] Summary Statistics and Empirical Loss</a>
+    <a class='right-next' id="next-link" href="design_srs_vs_big_data.html" title="next page"><span class="section-number">2.4. </span>SRS vs. “Big Data”</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
